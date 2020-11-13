@@ -4,6 +4,7 @@
   "main": "dist/index.js",
   "module": "esm/index.js",
   "sideEffects": false,
+  "description": "Abstract class that provides API to wrap any database instance/entity. It includes development methods that save a json file and the user is responsible for handling the production methods when the mode is production.",
   "files": [
     "dist/",
     "esm/"
