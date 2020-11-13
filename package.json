@@ -1,0 +1,53 @@
+{
+  "name": "database-wrapper",
+  "version": "1.0.1",
+  "main": "dist/index.js",
+  "module": "esm/index.js",
+  "sideEffects": false,
+  "files": [
+    "dist/",
+    "esm/"
+  ],
+  "types": "dist/index.d.ts",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "prepack": "yarn build",
+    "prebuild": "yarn clean",
+    "build:cjs": "tsc",
+    "build:es": "tsc -m esNext --outDir esm",
+    "build": "yarn build:cjs && yarn build:es",
+    "clean": "rimraf dist esm",
+    "test": "jest"
+  },
+  "keywords": ["express", "mongoose", "database", "json"],
+  "author": "WIlfred Lopez",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/express": "^4.17.8",
+    "@types/jest": "^26.0.15",
+    "jest": "^26.6.3",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^26.4.4",
+    "tslib": "^2.0.3",
+    "typescript": "^4.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wilfredlopez/database-wrapper"
+  },
+  "homepage": "https://github.com/wilfredlopez/database-wrapper#readme",
+  "dependencies": {
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "clearMocks": true,
+    "coverageDirectory": "coverage",
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.(ts|tsx)"
+    ],
+    "setupFiles": [
+      "<rootDir>/tests/setupTests.ts"
+    ]
+  }
+}
