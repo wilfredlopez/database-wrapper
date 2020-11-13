@@ -1,6 +1,6 @@
 {
   "name": "database-wrapper",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "main": "dist/index.js",
   "module": "esm/index.js",
   "sideEffects": false,
@@ -11,15 +11,19 @@
   "types": "dist/index.d.ts",
   "typings": "dist/index.d.ts",
   "scripts": {
-    "prepack": "yarn build",
-    "prebuild": "yarn clean",
+    "prepare": "npm run build && npm run clean",
     "build:cjs": "tsc",
     "build:es": "tsc -m esNext --outDir esm",
-    "build": "yarn build:cjs && yarn build:es",
+    "build": "npm run build:cjs && npm run build:es",
     "clean": "rimraf dist esm",
     "test": "jest"
   },
-  "keywords": ["express", "mongoose", "database", "json"],
+  "keywords": [
+    "express",
+    "mongoose",
+    "database",
+    "json"
+  ],
   "author": "WIlfred Lopez",
   "license": "MIT",
   "devDependencies": {
@@ -36,8 +40,7 @@
     "url": "https://github.com/wilfredlopez/database-wrapper"
   },
   "homepage": "https://github.com/wilfredlopez/database-wrapper#readme",
-  "dependencies": {
-  },
+  "dependencies": {},
   "jest": {
     "preset": "ts-jest",
     "clearMocks": true,
